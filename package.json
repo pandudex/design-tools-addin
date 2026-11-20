@@ -1,0 +1,19 @@
+{
+  "name": "design-tools-powerpoint-addin",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Design Tools (prototype): Office Add-in PowerPoint untuk otomatisasi desain",
+  "scripts": {
+    "certs": "office-addin-dev-certs install",
+    "serve": "node serve.js",
+    "validate": "office-addin-manifest validate manifest.xml",
+    "sideload": "office-addin-debugging start manifest.xml desktop --app powerpoint --no-debug",
+    "test": "node --test tests/geometry.test.js"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "office-addin-debugging": "^5.0.0",
+    "office-addin-dev-certs": "^1.13.0",
+    "office-addin-manifest": "^1.13.0"
+  }
+}
