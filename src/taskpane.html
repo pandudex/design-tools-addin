@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Design Tools</title>
+  <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+  <link rel="stylesheet" href="taskpane.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <div class="logo">D</div>
+      <div>
+        <h1>Design Tools</h1>
+        <div class="sub">Prototype</div>
+      </div>
+    </div>
+    <div class="pills" role="radiogroup" aria-label="Master (objek acuan)" title="Objek acuan untuk Align, Dock, Stretch, Fill">
+      <label><input type="radio" name="masterMode" value="last" checked /><span>terakhir</span></label>
+      <label><input type="radio" name="masterMode" value="first" /><span>pertama</span></label>
+      <label><input type="radio" name="masterMode" value="largest" /><span>terbesar</span></label>
+    </div>
+    <div class="cnt"><span id="selCount">Pilih objek di slide</span> · tahan <b>Ctrl</b> untuk acuan slide</div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Align</h2>
+      <div class="icons c6">
+        <button data-act="align" data-v="left" title="Align Left: ratakan ke sisi kiri Master" aria-label="Align Left"><img src="icons/align-left.svg" alt="" /></button>
+        <button data-act="align" data-v="center" title="Align Center: ratakan ke tengah Master" aria-label="Align Center"><img src="icons/align-center.svg" alt="" /></button>
+        <button data-act="align" data-v="right" title="Align Right: ratakan ke sisi kanan Master" aria-label="Align Right"><img src="icons/align-right.svg" alt="" /></button>
+        <button data-act="align" data-v="top" title="Align Top: ratakan ke sisi atas Master" aria-label="Align Top"><img src="icons/align-top.svg" alt="" /></button>
+        <button data-act="align" data-v="middle" title="Align Middle: ratakan ke tengah vertikal Master" aria-label="Align Middle"><img src="icons/align-middle.svg" alt="" /></button>
+        <button data-act="align" data-v="bottom" title="Align Bottom: ratakan ke sisi bawah Master" aria-label="Align Bottom"><img src="icons/align-bottom.svg" alt="" /></button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Dock <small>menempel Master</small></h2>
+      <div class="icons c4">
+        <button data-act="dock" data-v="left" title="Dock Left: geser ke kiri sampai menempel Master" aria-label="Dock Left"><img src="icons/dock-left.svg" alt="" /></button>
+        <button data-act="dock" data-v="right" title="Dock Right: geser ke kanan sampai menempel Master" aria-label="Dock Right"><img src="icons/dock-right.svg" alt="" /></button>
+        <button data-act="dock" data-v="up" title="Dock Up: geser ke atas sampai menempel Master" aria-label="Dock Up"><img src="icons/dock-up.svg" alt="" /></button>
+        <button data-act="dock" data-v="down" title="Dock Down: geser ke bawah sampai menempel Master" aria-label="Dock Down"><img src="icons/dock-down.svg" alt="" /></button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Stretch <small>tarik ke sisi Master</small></h2>
+      <div class="icons c4">
+        <button data-act="stretch" data-v="left" title="Stretch Left: tarik sisi kiri ke sisi kiri Master" aria-label="Stretch Left"><img src="icons/stretch-left.svg" alt="" /></button>
+        <button data-act="stretch" data-v="right" title="Stretch Right: tarik sisi kanan ke sisi kanan Master" aria-label="Stretch Right"><img src="icons/stretch-right.svg" alt="" /></button>
+        <button data-act="stretch" data-v="up" title="Stretch Up: tarik sisi atas ke sisi atas Master" aria-label="Stretch Up"><img src="icons/stretch-up.svg" alt="" /></button>
+        <button data-act="stretch" data-v="down" title="Stretch Down: tarik sisi bawah ke sisi bawah Master" aria-label="Stretch Down"><img src="icons/stretch-down.svg" alt="" /></button>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Fill <small>tutup celah</small></h2>
+      <div class="icons c4">
+        <button data-act="fill" data-v="left" title="Fill Left: tarik sisi kiri untuk menutup celah ke Master" aria-label="Fill Left"><img src="icons/fill-left.svg" alt="" /></button>
+        <button data-act="fill" data-v="right" title="Fill Right: tarik sisi kanan untuk menutup celah ke Master" aria-label="Fill Right"><img src="icons/fill-right.svg" alt="" /></button>
+        <button data-act="fill" data-v="up" title="Fill Up: tarik sisi atas untuk menutup celah ke Master" aria-label="Fill Up"><img src="icons/fill-up.svg" alt="" /></button>
+        <button data-act="fill" data-v="down" title="Fill Down: tarik sisi bawah untuk menutup celah ke Master" aria-label="Fill Down"><img src="icons/fill-down.svg" alt="" /></button>
+      </div>
+    </section>
+
+    <div class="pair">
+      <section class="card">
+        <h2>Distribute</h2>
+        <div class="icons c2">
+          <button data-act="distribute" data-v="h" title="Distribute Horizontally: jarak antar objek sama (Ctrl: di seluruh slide)" aria-label="Distribute Horizontally"><img src="icons/distribute-h.svg" alt="" /></button>
+          <button data-act="distribute" data-v="v" title="Distribute Vertically: jarak antar objek sama (Ctrl: di seluruh slide)" aria-label="Distribute Vertically"><img src="icons/distribute-v.svg" alt="" /></button>
+        </div>
+      </section>
+      <section class="card">
+        <h2>Text Box</h2>
+        <div class="icons c2">
+          <button data-act="splitText" title="Split Text Box: pisahkan di posisi kursor" aria-label="Split Text Box"><img src="icons/split-textbox.svg" alt="" /></button>
+          <button data-act="mergeText" title="Merge Text Boxes: gabung sesuai urutan seleksi" aria-label="Merge Text Boxes"><img src="icons/merge-textboxes.svg" alt="" /></button>
+        </div>
+      </section>
+    </div>
+
+    <div class="tools">
+      <button class="tool" data-open="sheet-sm" title="Slice or Multiply Shape">
+        <span class="t"><img src="icons/slice-multiply.svg" alt="" /></span>Slice /<br />Multiply
+      </button>
+      <button class="tool" data-open="sheet-mx" title="Align in Matrix">
+        <span class="t"><img src="icons/align-matrix.svg" alt="" /></span>Matrix<br />&nbsp;
+      </button>
+      <button class="tool" data-open="sheet-rr" title="Rounded Rectangle Radius">
+        <span class="t"><img src="icons/rounded-radius.svg" alt="" /></span>Rounded<br />Radius
+      </button>
+    </div>
+  </main>
+
+  <!-- ===== Lembar pengaturan (seperti dialog di spesifikasi) ===== -->
+  <div class="scrim" id="scrim" hidden></div>
+
+  <section class="sheet" id="sheet-sm" role="dialog" aria-label="Slice or Multiply Shape" hidden>
+    <div class="sh-head"><img src="icons/slice-multiply.svg" alt="" /><h3>Slice or Multiply Shape</h3><button class="x" data-close aria-label="Tutup">✕</button></div>
+    <div class="sh-body">
+      <p class="note">Pilih tepat 1 shape.</p>
+      <div class="seg">
+        <label><input type="radio" name="smMode" value="slice" checked /><span>Slice</span></label>
+        <label><input type="radio" name="smMode" value="multiply" /><span>Multiply</span></label>
+      </div>
+      <div class="fields">
+        <label>Baris <input type="number" id="smRows" value="2" min="1" /></label>
+        <label>Kolom <input type="number" id="smCols" value="2" min="1" /></label>
+        <label>Jarak baris <input type="number" id="smRowGap" value="0.5" min="0" step="0.1" /></label>
+        <label>Jarak kolom <input type="number" id="smColGap" value="0.5" min="0" step="0.1" /></label>
+      </div>
+      <label class="inline">Satuan
+        <select id="smUnit"><option value="cm" selected>cm</option><option value="in">in</option><option value="pt">pt</option></select>
+      </label>
+      <div class="btns"><button class="ghost" data-close>Batal</button><button class="primary" data-act="sliceMultiply">OK</button></div>
+    </div>
+  </section>
+
+  <section class="sheet" id="sheet-mx" role="dialog" aria-label="Align in Matrix" hidden>
+    <div class="sh-head"><img src="icons/align-matrix.svg" alt="" /><h3>Align in Matrix</h3><button class="x" data-close aria-label="Tutup">✕</button></div>
+    <div class="sh-body">
+      <p class="note">Pilih 2+ objek. Diisi per baris sesuai urutan seleksi.</p>
+      <div class="seg">
+        <label><input type="radio" name="mxMode" value="auto" checked /><span>Auto</span></label>
+        <label><input type="radio" name="mxMode" value="rows" /><span>Baris</span></label>
+        <label><input type="radio" name="mxMode" value="cols" /><span>Kolom</span></label>
+      </div>
+      <div class="fields">
+        <label>Baris <input type="number" id="mxRows" value="2" min="1" /></label>
+        <label>Kolom <input type="number" id="mxCols" value="2" min="1" /></label>
+        <label>Jarak baris <input type="number" id="mxRowGap" value="0.5" min="0" step="0.1" /></label>
+        <label>Jarak kolom <input type="number" id="mxColGap" value="0.5" min="0" step="0.1" /></label>
+      </div>
+      <label class="inline">Satuan
+        <select id="mxUnit"><option value="cm" selected>cm</option><option value="in">in</option><option value="pt">pt</option></select>
+      </label>
+      <div class="seg">
+        <label><input type="radio" name="mxSize" value="fit" checked /><span>Auto fit</span></label>
+        <label><input type="radio" name="mxSize" value="equal" /><span>Semua sama</span></label>
+      </div>
+      <div class="padwrap">
+        <span class="lbl">Posisi di sel</span>
+        <div class="alignpad" title="Posisi objek yang lebih kecil di dalam selnya">
+          <input type="radio" name="mxAlign" value="0,0" aria-label="Kiri atas" /><input type="radio" name="mxAlign" value="0,1" aria-label="Tengah atas" /><input type="radio" name="mxAlign" value="0,2" aria-label="Kanan atas" />
+          <input type="radio" name="mxAlign" value="1,0" aria-label="Kiri tengah" /><input type="radio" name="mxAlign" value="1,1" aria-label="Tengah" checked /><input type="radio" name="mxAlign" value="1,2" aria-label="Kanan tengah" />
+          <input type="radio" name="mxAlign" value="2,0" aria-label="Kiri bawah" /><input type="radio" name="mxAlign" value="2,1" aria-label="Tengah bawah" /><input type="radio" name="mxAlign" value="2,2" aria-label="Kanan bawah" />
+        </div>
+      </div>
+      <div class="btns"><button class="ghost" data-close>Batal</button><button class="primary" data-act="matrix">OK</button></div>
+    </div>
+  </section>
+
+  <section class="sheet" id="sheet-rr" role="dialog" aria-label="Rounded Rectangle Radius" hidden>
+    <div class="sh-head"><img src="icons/rounded-radius.svg" alt="" /><h3>Rounded Rectangle Radius</h3><button class="x" data-close aria-label="Tutup">✕</button></div>
+    <div class="sh-body">
+      <p class="note">Ikut nilai Master, atau tentukan sendiri.</p>
+      <div class="seg">
+        <label><input type="radio" name="rrMode" value="master" checked /><span>Ikut Master</span></label>
+        <label><input type="radio" name="rrMode" value="value" /><span>Nilai</span></label>
+      </div>
+      <div class="row2">
+        <input type="number" id="rrValue" value="0.5" min="0" step="0.1" />
+        <select id="rrUnit"><option value="cm" selected>cm</option><option value="in">in</option><option value="pt">pt</option></select>
+      </div>
+      <label class="inline check"><input type="checkbox" id="rrForce" /> Abaikan cek nama shape</label>
+      <div class="btns"><button class="ghost" data-close>Batal</button><button class="primary" data-act="radius">Terapkan</button></div>
+    </div>
+  </section>
+
+  <footer class="toast"><p id="status" role="status">Memuat…</p></footer>
+
+  <script src="geometry.js"></script>
+  <script src="taskpane.js"></script>
+</body>
+</html>

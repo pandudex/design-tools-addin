@@ -1,0 +1,136 @@
+:root {
+  --mint: #3ECF9E;
+  --mint-ink: #0f6b4c;
+  --ink: #1F2937;
+  --muted: #6B7280;
+  --line: #E6ECEA;
+  --bg: #F2F8F6;
+  --card: #fff;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body {
+  font: 13px/1.45 "Segoe UI", system-ui, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  padding-bottom: 64px; /* ruang untuk toast */
+}
+[hidden] { display: none !important; }
+
+/* ---------- header mint ---------- */
+.top { background: var(--mint); color: #fff; padding: 16px 16px 14px; }
+.brand { display: flex; align-items: center; gap: 10px; }
+.logo { width: 30px; height: 30px; border-radius: 50%; background: #fff; color: var(--mint); font-weight: 800; display: grid; place-items: center; flex: none; }
+h1 { font-size: 15.5px; margin: 0; font-weight: 700; }
+.sub { font-size: 11.5px; opacity: .9; }
+.pills { margin-top: 13px; display: flex; gap: 6px; flex-wrap: wrap; }
+.pills input { position: absolute; opacity: 0; pointer-events: none; }
+.pills span {
+  display: block; padding: 5px 11px; border-radius: 99px; font-size: 12px; cursor: pointer;
+  background: rgba(255, 255, 255, .22); transition: background .12s;
+}
+.pills span:hover { background: rgba(255, 255, 255, .36); }
+.pills input:checked + span { background: #fff; color: var(--mint-ink); font-weight: 700; }
+.pills input:checked + span::before { content: "Master: "; font-weight: 600; }
+.pills input:focus-visible + span { outline: 2px solid #fff; outline-offset: 2px; }
+.cnt { margin-top: 10px; font-size: 11.5px; opacity: .95; }
+.cnt b { font-weight: 700; }
+
+/* ---------- kartu ---------- */
+main { padding: 14px; display: grid; gap: 11px; }
+.card { background: var(--card); border-radius: 14px; padding: 13px; box-shadow: 0 1px 2px rgba(20, 60, 50, .06); }
+.card h2 { margin: 0 0 11px; font-size: 12px; font-weight: 700; display: flex; align-items: center; gap: 8px; }
+.card h2::before { content: ""; width: 4px; height: 14px; border-radius: 2px; background: var(--mint); }
+.card h2 small { font-weight: 400; color: var(--muted); font-size: 11px; }
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+
+/* ---------- tombol ikon ---------- */
+.icons { display: grid; gap: 8px; }
+.icons.c6 { grid-template-columns: repeat(6, 1fr); }
+.icons.c4 { grid-template-columns: repeat(4, 1fr); }
+.icons.c2 { grid-template-columns: repeat(2, 1fr); }
+.icons button {
+  padding: 0; aspect-ratio: 1; width: 100%; background: #fff; overflow: hidden; cursor: pointer;
+  border: 1px solid var(--line); border-radius: 11px; box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+  transition: transform .08s ease, border-color .12s ease, box-shadow .12s ease;
+}
+.icons button img { display: block; width: 100%; height: 100%; }
+.icons button:hover { border-color: var(--mint); box-shadow: 0 4px 12px rgba(62, 207, 158, .4); transform: translateY(-2px); }
+.icons button:active { transform: scale(.96); }
+.icons button:disabled { opacity: .45; cursor: wait; transform: none; box-shadow: none; }
+button:focus-visible { outline: 2px solid var(--mint); outline-offset: 2px; }
+
+/* ---------- ubin fitur lanjutan ---------- */
+.tools { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.tool {
+  background: #fff; border: 0; border-radius: 14px; padding: 10px 6px 9px; text-align: center;
+  font: inherit; font-size: 11.5px; font-weight: 600; color: var(--ink); cursor: pointer;
+  box-shadow: 0 1px 2px rgba(20, 60, 50, .06); transition: transform .08s, box-shadow .12s;
+}
+.tool:hover { box-shadow: 0 4px 12px rgba(62, 207, 158, .35); transform: translateY(-1px); }
+.tool .t { display: block; width: 46px; height: 46px; margin: 0 auto 6px; border-radius: 11px; overflow: hidden; border: 1px solid var(--line); }
+.tool .t img { display: block; width: 100%; height: 100%; }
+
+/* ---------- lembar pengaturan ---------- */
+.scrim { position: fixed; inset: 0; background: rgba(15, 40, 32, .45); z-index: 10; }
+.sheet {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 11; max-height: 88vh; overflow-y: auto;
+  background: #fff; border-radius: 18px 18px 0 0; box-shadow: 0 -10px 40px rgba(0, 0, 0, .2);
+  padding-bottom: 64px; /* toast tetap terlihat di bawah */
+  animation: up .16s ease-out;
+}
+@keyframes up { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+.sh-head { display: flex; align-items: center; gap: 10px; padding: 14px 14px 10px; position: sticky; top: 0; background: #fff; border-bottom: 1px solid var(--line); }
+.sh-head img { width: 34px; height: 34px; border: 1px solid var(--line); border-radius: 9px; }
+.sh-head h3 { margin: 0; font-size: 14px; flex: 1; }
+.x { border: 0; background: var(--bg); width: 28px; height: 28px; border-radius: 50%; cursor: pointer; color: var(--muted); font-size: 12px; }
+.x:hover { background: #E1EEE9; }
+.sh-body { padding: 12px 14px 14px; display: grid; gap: 11px; }
+.note { margin: 0; font-size: 11.5px; color: var(--muted); }
+
+.seg { display: flex; background: var(--bg); border: 1px solid var(--line); border-radius: 9px; padding: 3px; gap: 3px; }
+.seg label { flex: 1; }
+.seg input { position: absolute; opacity: 0; pointer-events: none; }
+.seg span { display: block; text-align: center; padding: 6px 4px; border-radius: 7px; cursor: pointer; font-size: 12px; color: var(--muted); }
+.seg input:checked + span { background: #fff; color: var(--ink); font-weight: 700; box-shadow: 0 1px 2px rgba(0, 0, 0, .1); }
+.seg input:focus-visible + span { outline: 2px solid var(--mint); }
+
+.fields { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.fields label { display: flex; flex-direction: column; gap: 3px; font-size: 11px; color: var(--muted); }
+.inline { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); }
+.inline select { flex: 1; }
+.inline.check { color: var(--ink); }
+.row2 { display: flex; gap: 8px; }
+.row2 input { flex: 1; min-width: 0; }
+.row2 select { width: 80px; }
+input[type=number], select {
+  width: 100%; padding: 6px 8px; font: inherit; color: var(--ink);
+  background: #fff; border: 1px solid var(--line); border-radius: 8px;
+}
+input[type=number]:focus, select:focus { outline: 2px solid var(--mint); outline-offset: -1px; border-color: var(--mint); }
+input:disabled { background: var(--bg); color: #9CA3AF; }
+input[type=checkbox], input[type=radio] { accent-color: var(--mint); }
+
+.padwrap { display: flex; align-items: center; justify-content: space-between; }
+.padwrap .lbl { font-size: 12px; color: var(--muted); }
+.alignpad { display: grid; grid-template-columns: repeat(3, 18px); gap: 5px; padding: 6px; background: var(--bg); border: 1px solid var(--line); border-radius: 8px; }
+.alignpad input { margin: 0; width: 18px; height: 18px; }
+
+.btns { display: flex; gap: 8px; margin-top: 2px; }
+.btns button { flex: 1; padding: 9px 10px; font: inherit; font-weight: 600; border-radius: 9px; cursor: pointer; }
+.primary { color: #fff; background: var(--mint); border: 0; }
+.primary:hover { filter: brightness(.95); }
+.primary:disabled { opacity: .5; cursor: wait; }
+.ghost { color: var(--ink); background: #fff; border: 1px solid var(--line); }
+.ghost:hover { background: var(--bg); }
+
+/* ---------- toast status ---------- */
+.toast {
+  position: fixed; left: 14px; right: 14px; bottom: 14px; z-index: 20;
+  background: #0f3d30; color: #fff; border-radius: 11px; padding: 10px 13px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, .25);
+}
+#status { margin: 0; font-size: 12px; display: flex; gap: 8px; align-items: flex-start; }
+#status::before { content: "✓"; color: var(--mint); font-weight: 800; }
+#status.err { color: #FECACA; }
+#status.err::before { content: "!"; color: #FCA5A5; }
